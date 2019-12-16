@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/dominique/.vim/pack/my-plugins/start/lightline.vim'
+let g:netrw_dirhist_4='/home/dominique/.urxvt'
+let g:netrw_dirhist_3='/home/dominique/git/dominique.michel-42sh/build'
+let g:netrw_dirhist_2='/home/dominique/.acdc/students/csharp-tp2/csharp-tp2-celian.raimbault/Exercices/Debugger'
+let g:netrw_dirhist_1='/home/dominique/.acdc/students/csharp-tp2/csharp-tp2-celian.raimbault/Exercices'
+let g:netrw_dirhist_0='/home/dominique/.acdc/students/csharp-tp2/csharp-tp2-celian.raimbault'
+let g:netrw_dirhist_9='/home/dominique/git/dominique.michel-42sh/src/expansion'
+let g:netrw_dirhist_8='/home/dominique/git/dominique.michel-42sh/src'
+let g:netrw_dirhist_7='/'
+let g:netrw_dirhist_6='/home/dominique/git/dominique.michel-42sh/src/exec'

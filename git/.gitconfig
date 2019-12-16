@@ -1,0 +1,17 @@
+[user]
+	email = dominique.michel@epita.fr
+	name = Dominique MICHEL
+
+[color]
+	ui = true
+
+[alias]
+	st = status
+	d = diff
+	t = tag
+	ca = commit -a
+	cam = commit -am
+
+[push]
+	default = simple
+	followTags = true
