@@ -6,11 +6,10 @@
 	ui = true
 
 [alias]
+	sl = shortlog
 	st = status
 	d = diff
 	t = tag
-	ca = commit -a
-	cam = commit -am
 
 [push]
 	default = simple

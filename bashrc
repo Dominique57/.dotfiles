@@ -30,6 +30,12 @@ if ${use_color} ; then
 		fi
 	fi
 
+    get_git_branch() {
+        temp=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+        if [ "$?" -eq 0 ] && [ "$temp" != "" ]; then
+            printf " [ $temp ]";
+        fi
+    }
 	PS1='\[$(tput bold)\]'
 	PS1+='\[$(tput setaf 195)\]['
 	PS1+='\[$(tput setaf 166)\]\u'
@@ -37,7 +43,8 @@ if ${use_color} ; then
 	PS1+='\[$(tput setaf 228)\]\h'
 	PS1+='\[$(tput setaf 160)\]-'
 	PS1+='\[$(tput setaf 129)\]\w'
-	PS1+='\[$(tput setaf 195)\]]\n'
+	PS1+='\[$(tput setaf 195)\]]'
+    PS1+='$(get_git_branch)\n'
 	PS1+='\[$(tput setaf 160)\]\$ '
 	PS1+='\[$(tput sgr0)\]';
 
@@ -68,8 +75,11 @@ export EDITOR=vim
 alias l='ls'
 alias xgcc='gcc -Wall -Wextra -pedantic -std=c99 -g -o main *.c'
 alias xgccf='gcc -Wall -Wextra -pedantic -std=c99 -g -o main'
+alias xg++='g++ -Wall -Wextra -pedantic -std=c++17 -g -o main *.cc'
+alias xg++f='g++ -Wall -Wextra -pedantic -std=c++17 -g -o main'
 alias caml='rlwrap ocaml'
 alias vim='vim -p'
+setxkbmap -option caps:escape
 
 
 xhost +local:root > /dev/null 2>&1
@@ -136,3 +146,5 @@ colors() {
 		echo; echo
 	done
 }
+export PGDATA="$HOME/postgres_data"
+export PGHOST="/tmp"

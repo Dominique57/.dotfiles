@@ -76,5 +76,20 @@ inoremap ( ()<Left>
 inoremap { {}<Left><Cr><Up><Right><Cr><Tab><bs>
 
 " ------------
-" Toggle ALE quick list
+" ALE Settings
 noremap <C-d> :ALEDetail<CR>
+noremap <C-Right> :ALENextWrap<CR>
+noremap <C-Left> :ALEPreviousWrap<CR>
+
+let g:custom_cpp_options = '-std=c++17 -Wall -Wextra'
+let g:ale_cpp_clang_options = g:custom_cpp_options
+let g:ale_cpp_clangcheck_options = g:custom_cpp_options
+let g:ale_cpp_clangd_options = g:custom_cpp_options
+let g:ale_cpp_clangtidy_options = g:custom_cpp_options
+let g:ale_cpp_clazy_options = g:custom_cpp_options
+let g:ale_cpp_cpplint_options = g:custom_cpp_options
+let g:ale_cpp_flawfinder_options = g:custom_cpp_options
+let g:ale_c_gcc_options = g:custom_cpp_options
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'

@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/dominique/git/sander.julien-saint-amand-tc/src/ast'
+let g:netrw_dirhist_3='/home/dominique/git/sander.julien-saint-amand-tc/lib/misc'
+let g:netrw_dirhist_2='/home/dominique/git/sander.julien-saint-amand-tc/lib'
+let g:netrw_dirhist_1='/home/dominique/git/sander.julien-saint-amand-tc'
+let g:netrw_dirhist_0='/home/dominique/git/sander.julien-saint-amand-tc/src'
+let g:netrw_dirhist_9='/home/dominique/git/sander.julien-saint-amand-tc/src/ast'
+let g:netrw_dirhist_8='/home/dominique/git/temp/sander.julien-saint-amand-tc/tests/res/lexer'
+let g:netrw_dirhist_7='/home/dominique/git/temp/sander.julien-saint-amand-tc/tests/moulinette/__pycache__'
+let g:netrw_dirhist_6='/home/dominique/git/temp/sander.julien-saint-amand-tc/tests/moulinette'
+let g:netrw_dirhist_5='/home/dominique/git/sander.julien-saint-amand-tc/tests/moulinette'
