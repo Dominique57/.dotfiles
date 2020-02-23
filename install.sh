@@ -26,5 +26,6 @@ for file in $simple_symlink; do
     fi
 
 
+    diff $file $home_file_path
     echo "$file to $home_file_path"
 done
