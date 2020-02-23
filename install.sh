@@ -2,7 +2,7 @@
 
 # list of element to symlink
 simple_symlink="vim vimrc bash_profile bashrc gdbinit gitconfig signature urxvt\
-                i3"
+                i3 Xresources"
 
 # backup folder to avoir overiding existing items
 mkdir -p "backup/"
@@ -14,8 +14,8 @@ for file in $simple_symlink; do
     home_file_path=~/.$file
 
     # Check file existance
-    [ ! -e "$file" ] && (echo "SRC file '$file' does not exist. Skipping...";
-                         continue)
+    [ ! -e "$file" ] && echo "SRC file '$file' does not exist. Skipping..."\
+                     && continue
 
     # Check source existance
     if [ -e "$home_file_path" ]; then
@@ -26,6 +26,5 @@ for file in $simple_symlink; do
     fi
 
 
-    diff $file $home_file_path
     echo "$file to $home_file_path"
 done
