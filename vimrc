@@ -49,7 +49,7 @@ set title           " title of window is current edited file
 set mouse=a         " enable mouse support
 set listchars=tab:>-,eol:¬,trail:▓ list
 " char to be shown
-set wildmenu        " open autocomplete menu on wim command
+set wildmenu        " open autocomplete menu on vim command
 set showmatch       " show matching braces
 
 " ----------------
@@ -61,35 +61,19 @@ set foldlevelstart=7
 nnoremap <space> za
 
 " ----------------
-" functions
-
-imap <C-Left> <C-o><Right>b
-nmap <C-Left> b
-vmap <C-Left> b
-
-imap <C-Right> <C-o><Right>w
-nmap <C-Right> w
-vmap <C-Right> w
-
 " remaps
 inoremap ( ()<Left>
 inoremap { {}<Left><Cr><Up><Right><Cr><Tab><bs>
 
 " ------------
 " ALE Settings
-noremap <C-d> :ALEDetail<CR>
-noremap <C-Right> :ALENextWrap<CR>
-noremap <C-Left> :ALEPreviousWrap<CR>
+nmap <C-d> <Plug>(coc-definition)
+nmap <C-i> <Plug>(coc-implementation)
+nmap <C-r> <Plug>(coc-references)
+" nmap <C-n> <Plug>(coc-rename)
 
-let g:custom_cpp_options = '-std=c++17 -Wall -Wextra'
-let g:ale_cpp_clang_options = g:custom_cpp_options
-let g:ale_cpp_clangcheck_options = g:custom_cpp_options
-let g:ale_cpp_clangd_options = g:custom_cpp_options
-let g:ale_cpp_clangtidy_options = g:custom_cpp_options
-let g:ale_cpp_clazy_options = g:custom_cpp_options
-let g:ale_cpp_cpplint_options = g:custom_cpp_options
-let g:ale_cpp_flawfinder_options = g:custom_cpp_options
-let g:ale_c_gcc_options = g:custom_cpp_options
+" nmap <C-h> <Plug>(coc-definition)
+" xmap <C-f> <Plug>(coc-format-selected)
 
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
+nmap <C-Left> <Plug>(coc-diagnostic-prev)
+nmap <C-Right> <Plug>(coc-diagnostic-next)
