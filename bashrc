@@ -77,9 +77,18 @@ alias xgcc='gcc -Wall -Wextra -pedantic -std=c99 -g -o main *.c'
 alias xgccf='gcc -Wall -Wextra -pedantic -std=c99 -g -o main'
 alias xg++='g++ -Wall -Wextra -pedantic -std=c++17 -g -o main *.cc'
 alias xg++f='g++ -Wall -Wextra -pedantic -std=c++17 -g -o main'
-alias caml='rlwrap ocaml'
 alias vim='vim -p'
 setxkbmap -option caps:escape
+
+take ()
+{
+    if [ "$#" -lt 1 ]; then
+        echo "Missing argument"
+    else
+        mkdir $1
+        cd $1
+    fi
+}
 
 
 xhost +local:root > /dev/null 2>&1
