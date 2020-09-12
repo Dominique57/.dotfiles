@@ -1,6 +1,6 @@
 URxvt.font:                     xft:xos4 Terminus:size=16
-URxvt.perl-ext-common:          default,resize-font
 URxvt.perl-lib:                 ~/.urxvt/ext/
+URxvt.perl-ext-common:          default,font-size
 
 
 Xft.dpi:       96
