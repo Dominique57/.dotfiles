@@ -33,6 +33,8 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
+#
+bindsym $mod+Shift+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id rofi -font URWGothic-Book\ 14 \
             -theme solarized_alternate -show-icons -show drun
 
@@ -65,9 +67,10 @@ bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym Print exec flameshot full -c
+bindsym $mod+Print --release exec flameshot gui
+bindsym $mod+Shift+Print --release exec flameshot gui
+
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 

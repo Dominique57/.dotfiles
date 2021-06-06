@@ -78,7 +78,6 @@ alias xgccf='gcc -Wall -Wextra -pedantic -std=c99 -g -o main'
 alias xg++='g++ -Wall -Wextra -pedantic -std=c++17 -g -o main *.cc'
 alias xg++f='g++ -Wall -Wextra -pedantic -std=c++17 -g -o main'
 alias vim='vim -p'
-setxkbmap -option caps:escape
 
 take ()
 {
