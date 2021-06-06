@@ -12,9 +12,8 @@ syntax enable       " enable syntax highlight
 
 " ----------------
 " color status line options
-set laststatus=2
-set background=dark
-colorscheme badwolf
+" set laststatus=2
+" set background=dark
 
 " ----------------
 " identation
@@ -60,20 +59,61 @@ set foldnestmax=7  " max nested code to wrap
 set foldlevelstart=7
 nnoremap <space> za
 
+" main color theme
+colorscheme badwolf
+
+
+" ----------------
+" Plug section
+call plug#begin('~/.vim/plugged')
+" IDE integration capability through visual studio LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Status bar (replace default vim bar)
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Better tree view
+Plug 'preservim/nerdtree'
+
+" File finder
+Plug 'junegunn/fzf'
+
+" Line indentation helper line
+Plug 'Yggdroot/indentLine'
+
+" Smart line commenter
+Plug 'preservim/nerdcommenter'
+
+" Nice icons " commented because urxvt font icons are broken
+Plug 'ryanoasis/vim-devicons'
+
+" Add more and better language support
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
+
 " ----------------
 " remaps
 inoremap ( ()<Left>
-inoremap { {}<Left><Cr><Up><Right><Cr><Tab><bs>
+" inoremap { {}<Left><Cr><Tab><bs><Cr><Up><C-o>$
+inoremap { {<Cr>!<Cr>}<Up><C-o>$<backspace>
 
 " ------------
-" ALE Settings
+" cocnvim Settings
 nmap <C-d> <Plug>(coc-definition)
 nmap <C-i> <Plug>(coc-implementation)
 nmap <C-r> <Plug>(coc-references)
-" nmap <C-n> <Plug>(coc-rename)
-
-" nmap <C-h> <Plug>(coc-definition)
-" xmap <C-f> <Plug>(coc-format-selected)
-
 nmap <C-Left> <Plug>(coc-diagnostic-prev)
 nmap <C-Right> <Plug>(coc-diagnostic-next)
+
+" Fuzzyfinder Settings
+noremap <C-f> :FZF<Cr>
+
+" Nerdcommenter Settings
+" noremap <C-_> <Plug>NERDCommenterToggle
+nnoremap <C-_> :call NERDComment("n", "Toggle")<CR><CR>
+vnoremap <C-_> :call NERDComment("n", "Toggle")<CR>
+let g:NERDCreateDefaultMappings = 0
+let g:NERDSpaceDelims = 1
+let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'vim': {'left': '"' } }

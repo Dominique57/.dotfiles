@@ -1,1 +1,11 @@
-{}
+{
+  "clangd.fallbackFlags": ["-std=c++17", "-Wextra", "-pedantic"],
+
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualTextLines": 1,
+  "diagnostic.virtualTextPrefix": "<< ",
+
+  "diagnostic.warningSign": "!",
+  "diagnostic.errorSign": "✘"
+}
