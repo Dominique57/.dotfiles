@@ -7,7 +7,7 @@ set clipboard=unnamedplus " make copying in global clipboard
 " ----------------
 " text options
 set encoding=utf-8  " utf8 encoding for unicode
-set scrolloff=3     " min number of lines top/bottom of cursor
+set scrolloff=6     " min number of lines top/bottom of cursor
 syntax enable       " enable syntax highlight
 
 " ----------------
@@ -25,7 +25,7 @@ set expandtab       " tabs to spaces
 set tabstop=4       " tab equqals 4 space
 set shiftwidth=4    " indent is 4 space
 set smarttab        " del indent not spaces
-
+set nowrap
 
 " ----------------
 " search
@@ -58,6 +58,13 @@ set foldenable      " enable by default
 set foldnestmax=7  " max nested code to wrap
 set foldlevelstart=7
 nnoremap <space> za
+
+" ----------------
+" Go back to last line
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 " main color theme
 colorscheme badwolf
@@ -103,7 +110,7 @@ inoremap { {<Cr>!<Cr>}<Up><C-o>$<backspace>
 " cocnvim Settings
 nmap <C-d> <Plug>(coc-definition)
 nmap <C-i> <Plug>(coc-implementation)
-nmap <C-r> <Plug>(coc-references)
+" nmap <C-r> <Plug>(coc-references)
 nmap <C-Left> <Plug>(coc-diagnostic-prev)
 nmap <C-Right> <Plug>(coc-diagnostic-next)
 
@@ -112,8 +119,8 @@ noremap <C-f> :FZF<Cr>
 
 " Nerdcommenter Settings
 " noremap <C-_> <Plug>NERDCommenterToggle
-nnoremap <C-_> :call NERDComment("n", "Toggle")<CR><CR>
-vnoremap <C-_> :call NERDComment("n", "Toggle")<CR>
+nnoremap <C-_> :call nerdcommenter#Comment("n", "Toggle")<CR><CR>
+vnoremap <C-_> :call nerdcommenter#Comment("x", "Toggle")<CR>
 let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
 let g:NERDCustomDelimiters = {'c': {'left': '//'}, 'vim': {'left': '"' } }
