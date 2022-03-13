@@ -38,6 +38,9 @@ bindsym $mod+Shift+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id rofi -font URWGothic-Book\ 14 \
             -theme solarized_alternate -show-icons -show drun
 
+bindsym $mod+t exec highlight-pointer -r 15
+bindsym $mod+Shift+t exec pkill highlight-point
+
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
@@ -64,12 +67,12 @@ bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill picom
+# bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec flameshot full -c
-bindsym $mod+Print --release exec flameshot gui
-bindsym $mod+Shift+Print --release exec flameshot gui
+bindsym $mod+Print exec flameshot gui
+bindsym $mod+Shift+Print exec flameshot gui
 
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
