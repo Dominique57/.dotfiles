@@ -102,9 +102,13 @@ call plug#end()
 
 " ----------------
 " remaps
-inoremap ( ()<Left>
-" inoremap { {}<Left><Cr><Tab><bs><Cr><Up><C-o>$
-inoremap { {<Cr>!<Cr>}<Up><C-o>$<backspace>
+" inoremap ( ()<Left>
+autocmd FileType c,cpp inoremap { {<Cr>!<Cr>}<Up><C-o>$<backspace>
+
+" Move to next/previous tab using tab+[left/right]
+nnoremap <Esc><Left> gT
+nnoremap <Esc><Right> gt
+
 
 " ------------
 " cocnvim Settings
